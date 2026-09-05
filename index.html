@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something for Miel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Ambient background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Music -->
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-button" id="musicButton" onclick="toggleMusic()">
+        ♫
+    </button>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 1 — ENVELOPE -->
+    <!-- ================================= -->
+
+    <section class="screen active" id="screen1">
+
+        <div class="gold-line"></div>
+
+        <p class="small-label">
+            A LITTLE SOMETHING
+        </p>
+
+        <h1>
+            For Miel
+        </h1>
+
+        <p class="date">
+            SEPTEMBER 5, 2026
+        </p>
+
+        <div class="envelope" id="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="letter-paper">
+                <span>✦</span>
+            </div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="wax-seal">
+                M
+            </div>
+
+        </div>
+
+        <button class="elegant-button" onclick="openLetter()">
+            OPEN THE LETTER
+        </button>
+
+        <p class="hint">
+            Take your time.
+        </p>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 2 — INTRODUCTION -->
+    <!-- ================================= -->
+
+    <section class="screen" id="screen2">
+
+        <div class="content">
+
+            <p class="small-label">
+                A NOTE FOR YOU
+            </p>
+
+            <div class="gold-line"></div>
+
+            <h2>
+                Dear Miel,
+            </h2>
+
+            <div class="intro-text">
+
+                <p>
+                    Today is a little reminder that
+                    some people deserve to be celebrated
+                    simply for being themselves.
+                </p>
+
+                <p>
+                    So for a moment, forget everything else.
+                    This little corner of my work
+                    is just for you.
+                </p>
+
+            </div>
+
+            <button class="elegant-button" onclick="nextScreen()">
+                CONTINUE
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 3 — LITTLE THINGS -->
+    <!-- ================================= -->
+
+    <section class="screen" id="screen3">
+
+        <div class="content wide">
+
+            <p class="small-label">
+                THE LITTLE THINGS
+            </p>
+
+            <h2>
+                Things worth celebrating.
+            </h2>
+
+            <div class="cards">
+
+                <div class="memory-card">
+                    <span class="number">01</span>
+
+                    <h3>
+                        Your Kindness
+                    </h3>
+
+                    <p>
+                        The little things you do probably mean
+                        more to people than you realize.
+                    </p>
+                </div>
+
+
+                <div class="memory-card">
+                    <span class="number">02</span>
+
+                    <h3>
+                        Your Presence
+                    </h3>
+
+                    <p>
+                        Some people make a room feel different
+                        simply by being there.
+                    </p>
+                </div>
+
+
+                <div class="memory-card">
+                    <span class="number">03</span>
+
+                    <h3>
+                        Your Smile
+                    </h3>
+
+                    <p>
+                        A small thing, perhaps.
+                        But somehow memorable.
+                    </p>
+                </div>
+
+
+                <div class="memory-card">
+                    <span class="number">04</span>
+
+                    <h3>
+                        You
+                    </h3>
+
+                    <p>
+                        And that's really what today
+                        is about.
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="elegant-button" onclick="nextScreen()">
+                ONE MORE THING
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 4 — CANDLE -->
+    <!-- ================================= -->
+
+    <section class="screen candle-screen" id="screen4">
+
+        <div class="content">
+
+            <p class="small-label">
+                MAKE A WISH
+            </p>
+
+            <h2>
+                One little wish.
+            </h2>
+
+            <p class="candle-instruction">
+                Before you continue,<br>
+                make a wish.
+            </p>
+
+
+            <div class="cake">
+
+                <div class="flame" id="flame"></div>
+
+                <div class="wick"></div>
+
+                <div class="candle">
+                    <div class="candle-stripe"></div>
+                    <div class="candle-stripe"></div>
+                </div>
+
+                <div class="cake-top"></div>
+                <div class="cake-body"></div>
+
+            </div>
+
+
+            <button
+                class="elegant-button"
+                id="wishButton"
+                onclick="blowCandle()"
+            >
+                MAKE YOUR WISH ✦
+            </button>
+
+            <p
+                class="wish-result"
+                id="wishResult"
+            ></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 5 — PERSONAL LETTER -->
+    <!-- ================================= -->
+
+    <section class="screen letter-screen" id="screen5">
+
+        <div class="paper">
+
+            <div class="paper-decoration">
+                ✦
+            </div>
+
+            <p class="letter-date">
+                September 5, 2026
+            </p>
+
+            <h2>
+                Dear Miel,
+            </h2>
+
+            <div class="personal-message" id="personalMessage">
+
+                <p>
+                    I hope this year brings you more moments
+                    that make you genuinely happy.
+                </p>
+
+                <p>
+                    More reasons to laugh.
+                    More memories worth keeping.
+                    More people who remind you
+                    how appreciated you are.
+                </p>
+
+                <p>
+                    And when things don't go exactly
+                    the way you planned,
+                    I hope you remember that you're
+                    doing better than you think.
+                </p>
+
+                <p>
+                    You deserve good things,
+                    quiet moments,
+                    unexpected happiness,
+                    and a year filled with memories
+                    you'll look back on with a smile.
+                </p>
+
+                <p>
+                    So here's to another chapter.
+                    Whatever comes next,
+                    I hope it's a beautiful one.
+                </p>
+
+                <p class="signature-message">
+                    Happy Birthday, Miel.
+                </p>
+
+                <p class="signature">
+                    — from someone who wishes you well
+                </p>
+
+            </div>
+
+            <button
+                class="elegant-button dark-button"
+                onclick="nextScreen()"
+            >
+                CLOSE THE LETTER
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SCREEN 6 — FINALE -->
+    <!-- ================================= -->
+
+    <section class="screen final-screen" id="screen6">
+
+        <div class="final-star">
+            ✦
+        </div>
+
+        <p class="small-label">
+            ONE LAST THING
+        </p>
+
+        <h1>
+            Happy Birthday,<br>
+            Miel.
+        </h1>
+
+        <div class="gold-line"></div>
+
+        <p class="final-message">
+
+            May your college years bring you
+            beautiful surprises,
+            meaningful moments,
+            and plenty of reasons to smile.
+
+            <br><br>
+
+            And may you always remember
+            just how special you are, speaking as your former classmate.
+
+        </p>
+
+        <p class="final-signature">
+            ✦
+        </p>
+
+        <p class="complete">
+            MADE ESPECIALLY FOR MIEL
+        </p>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
